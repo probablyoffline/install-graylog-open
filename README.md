@@ -4,6 +4,7 @@ Stand alone instance of graylog on Ubuntu. Note: CPU needs AVX instruction set.
 Scripts created for lab and testing purposes.<br>
 <br>
 Security notes:<br>
+web server is http after setup<br>
 install-graylog-server.sh - temporary unencrypted 'secrets' files created.<br>
 <br>
 Ubuntu 22.04 Jammy<br>
