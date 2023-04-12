@@ -163,6 +163,7 @@ rounded_mem_gb=$(echo "($half_mem_gb+0.5)/1" | bc)
 echo -e "\n[+] Updating jvm options \n"
 sed -i "s/-Xms[0-9]*[m|g]/-Xms${rounded_mem_gb}g/" /graylog/opensearch/config/jvm.options
 sed -i "s/-Xmx[0-9]*[m|g]/-Xmx${rounded_mem_gb}g/" /graylog/opensearch/config/jvm.options
+sed -i "s/GRAYLOG_SERVER_JAVA_OPTS=\"-Xms1g -Xmx1g/GRAYLOG_SERVER_JAVA_OPTS=\"-Xms${rounded_mem_gb}g -Xmx${rounded_mem_gb}g/" /etc/default/graylog-server
 
 # Configure the kernel parameters at runtime
 echo -e "\n[+] Configuring kernel parameters \n"
