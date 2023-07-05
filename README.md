@@ -10,7 +10,7 @@ install-graylog-server.sh - temporary unencrypted 'secrets' files created.<br>
 Ubuntu 22.04 Jammy<br>
 OpenSearch 2.6.0<br>
 MongoDB 6.0<br>
-Graylog Open 5.0<br>
+Graylog Open 5.1.3<br>
 <br>
 Important Files locations:<br>
 MongoDB data directory /var/lib/mongodb<br>
