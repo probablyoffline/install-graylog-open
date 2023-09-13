@@ -4,18 +4,17 @@
 ## Install MongoDB
 # Install prereq
 echo -e "\n[+] Installing gnupg \n"
-sudo apt install -y gnupg
+sudo apt install -y gnupg curl
  
 
 # Add public key
 echo -e "\n[+] Adding MongoDB public key \n"
-wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
- 
+curl -fsSL https://pgp.mongodb.com/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor 
 
 # Add mongodb repo
 echo -e "\n[+] Adding mongodb repo \n"
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
- 
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+
 
 # Reload local package database
 sudo apt update -y
@@ -68,9 +67,9 @@ sudo systemctl start disable-transparent-huge-pages.service
 echo -e "\n[+] Adding OpenSearch user\n"
 sudo adduser --system --disabled-password --disabled-login --home /var/empty --no-create-home --quiet --force-badname --group opensearch
 
-# Download Opensearch 2.6.0
+# Download Opensearch 2.9.0
 echo -e "\n[+] Downloading OpenSearch packages \n"
-wget https://artifacts.opensearch.org/releases/bundle/opensearch/2.6.0/opensearch-2.6.0-linux-x64.tar.gz
+wget https://artifacts.opensearch.org/releases/bundle/opensearch/2.9.0/opensearch-2.9.0-linux-x64.tar.gz
 
 # Create Directories
 echo -e "\n[+] Creating directories \n"
@@ -79,8 +78,8 @@ sudo mkdir /var/log/opensearch
 
 # Extract Contents from tar
 echo -e "\n[+] Extracting contents \n"
-sudo tar -zxf opensearch-2.6.0-linux-x64.tar.gz
-sudo mv opensearch-2.6.0/* /graylog/opensearch/
+sudo tar -zxf opensearch-2.9.0-linux-x64.tar.gz
+sudo mv opensearch-2.9.0/* /graylog/opensearch/
 
 # Set Permissions
 echo -e "\n[+] Setting permissions \n"
@@ -180,16 +179,16 @@ sudo systemctl start opensearch.service
 # Add repo
 echo -e "\n[+] Adding Graylog repo \n"
 sudo apt install -y apt-transport-https
-wget https://packages.graylog2.org/repo/packages/graylog-5.0-repository_latest.deb
-sudo dpkg -i graylog-5.0-repository_latest.deb
+wget https://packages.graylog2.org/repo/packages/graylog-5.1-repository_latest.deb
+sudo dpkg -i graylog-5.1-repository_latest.deb
 sudo apt -y update
  
 # Check versions
 # sudo apt-cache policy graylog-server
 
 # Install server
-echo -e "\n[+] Installing Graylog server 5.0.5-1 \n"
-sudo apt install graylog-server=5.0.5-1
+echo -e "\n[+] Installing Graylog server 5.1.5 \n"
+sudo apt install graylog-server=5.1.5
 
 ## Update graylog config
 # Generate secrets
