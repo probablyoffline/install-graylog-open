@@ -1,0 +1,290 @@
+{
+  "extractors": [
+    {
+      "title": "rule number",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "rulenr",
+      "extractor_config": {
+        "index": 1,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "rule id",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "rid",
+      "extractor_config": {
+        "index": 4,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "interface",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "interface",
+      "extractor_config": {
+        "index": 5,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "reason",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "reason",
+      "extractor_config": {
+        "index": 6,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "action",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "action",
+      "extractor_config": {
+        "index": 7,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "direction",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "dir",
+      "extractor_config": {
+        "index": 8,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "ip version",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "ipversion",
+      "extractor_config": {
+        "index": 9,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "type of service",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "tos",
+      "extractor_config": {
+        "index": 10,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "ttl",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "ttl",
+      "extractor_config": {
+        "index": 12,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "id",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "id",
+      "extractor_config": {
+        "index": 13,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "protocol number",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "protonum",
+      "extractor_config": {
+        "index": 16,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "protocol name",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "protoname",
+      "extractor_config": {
+        "index": 17,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "length",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "length",
+      "extractor_config": {
+        "index": 18,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "destination",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "dst",
+      "extractor_config": {
+        "index": 20,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "source",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "src",
+      "extractor_config": {
+        "index": 19,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "source port",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "srcport",
+      "extractor_config": {
+        "index": 21,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "tcp flags",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "tcpflags",
+      "extractor_config": {
+        "index": 24,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "sequence",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "seq",
+      "extractor_config": {
+        "index": 25,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    },
+    {
+      "title": "urgent pointer",
+      "extractor_type": "split_and_index",
+      "converters": [],
+      "order": 0,
+      "cursor_strategy": "copy",
+      "source_field": "message",
+      "target_field": "urp",
+      "extractor_config": {
+        "index": 27,
+        "split_by": ","
+      },
+      "condition_type": "none",
+      "condition_value": ""
+    }
+  ],
+  "version": "5.1.5"
+}
