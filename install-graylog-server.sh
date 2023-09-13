@@ -187,7 +187,7 @@ sudo apt -y update
 
 # Install server
 echo -e "\n[+] Installing Graylog server 5.1.5 \n"
-sudo apt install graylog-server=5.1.5
+sudo apt install graylog-server=5.1.5-1
 
 ## Update graylog config
 # Generate secrets
