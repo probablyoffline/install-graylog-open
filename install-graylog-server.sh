@@ -162,7 +162,6 @@ rounded_mem_gb=$(echo "($half_mem_gb+0.5)/1" | bc)
 echo -e "\n[+] Updating jvm options \n"
 sed -i "s/-Xms[0-9]*[m|g]/-Xms${rounded_mem_gb}g/" /graylog/opensearch/config/jvm.options
 sed -i "s/-Xmx[0-9]*[m|g]/-Xmx${rounded_mem_gb}g/" /graylog/opensearch/config/jvm.options
-sed -i "s/GRAYLOG_SERVER_JAVA_OPTS=\"-Xms1g -Xmx1g/GRAYLOG_SERVER_JAVA_OPTS=\"-Xms${rounded_mem_gb}g -Xmx${rounded_mem_gb}g/" /etc/default/graylog-server
 
 # Configure the kernel parameters at runtime
 echo -e "\n[+] Configuring kernel parameters \n"
@@ -217,6 +216,8 @@ echo -e "\n[+] Updating Graylog config \n"
 sed -i "s/^password_secret =.*/password_secret = $secret/" /etc/graylog/server/server.conf
 sed -i "s/^root_password_sha2 =.*/root_password_sha2 = $password_sha2/" /etc/graylog/server/server.conf
 sed -i "s/^#http_bind_address = 127.0.0.1:9000/$graylog_address/" /etc/graylog/server/server.conf
+sed -i "s/GRAYLOG_SERVER_JAVA_OPTS=\"-Xms1g -Xmx1g/GRAYLOG_SERVER_JAVA_OPTS=\"-Xms${rounded_mem_gb}g -Xmx${rounded_mem_gb}g/" /etc/default/graylog-server
+
  
 # Clean up temporary files
 echo -e "\n[+] Cleaning up temp files \n"
